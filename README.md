@@ -125,7 +125,8 @@ GitHubを選択
 ![](https://farm6.staticflickr.com/5503/14315964898_88f9425f6c.jpg)  
 Dockerfileが存在するレポジトリを選択
 ![](https://farm3.staticflickr.com/2923/14502571245_f4672b732d.jpg)  
-Create Repository
+Dockerfile Locationにはレポジトリ内のDocerfileの場所を指定（ここではsample_sinatra)
+公開タイプを選択したらCreate Repositoryする。
 ![](https://farm4.staticflickr.com/3907/14501239744_e680fec5f4.jpg)
 ![](https://farm4.staticflickr.com/3891/14315917890_757f58e889.jpg)
 

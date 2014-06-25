@@ -20,7 +20,8 @@ Dockerでアプリ環境を構築するまでの手順を整理する
 + [イメージを実行する](#5)
 + [テスト](#6)
 + [かたづけ](#7)
-+ [Docker Hubにプッシュ](#9)
++ [Docker Hubにプッシュ](#8)
++ [おまけ](#9)
 
 # 詳細
 ## <a name="1">セットアップ</a>
@@ -128,7 +129,30 @@ Dockerfileが存在するレポジトリを選択
 Dockerfile Locationにはレポジトリ内のDocerfileの場所を指定（ここではsample_sinatra)
 公開タイプを選択したらCreate Repositoryする。
 ![](https://farm4.staticflickr.com/3907/14501239744_e680fec5f4.jpg)
-![](https://farm4.staticflickr.com/3891/14315917890_757f58e889.jpg)
+![](https://farm4.staticflickr.com/3891/14315917890_757f58e889.jpg)  
+上記ではDockerfileのロケーションを間違えていたためビルドに失敗している。　　
+![](https://farm4.staticflickr.com/3874/14501594752_1cda267c6b.jpg)
+Docerfile Locationを_/sample_sinatra_に修正後Start a Buildを実行してビルドを正常終了させる。
+
+## <a name="9">おまけ</a>
+### 他のレポジトリからDcokerfileをつくる。
+[sinatraにbootstrap実装](https://github.com/k2works/sinatra_bootstrap)のレポジトリを使う。
+```bash
+$ mkdir sample_gitrepo
+$ cd sample_gitrepo/
+$ rbdock 2.0.0-p247 --rvm --app https://github.com/k2works/sinatra_bootstrap
+$ docker build -t='k2works/sampel_gitrepo' .
+$ docker run -d -p 9292:9292 --name=test_sample_gitrepo k2works/sample_gitrepo 'rvm use 2.0.0-p247;rackup config.ru'
+```
+### Ruby on RailsプロジェクトのDockerfileをつくる。
+```bash
+$ rails new sample_rails_app
+$ cd sample_rails_app
+$ rdbock 2.1.0 --rvm --app .
+$ docker build -t='k2works/sample_rails_app' .
+$ docker run -d -p 3000:3000 --name=test_rails k2works/sample_rails_app 'rvm use ruby-2.1.0;rails server'
+```
+注意：Dockerfileは編集する必要あり。
 
 # 参照
 + [Dockerizing a Node.js web application](http://docs.docker.com/examples/nodejs_web_app/#test)

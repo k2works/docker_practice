@@ -154,6 +154,10 @@ $ docker run -d -p 3000:3000 --name=test_rails k2works/sample_rails_app 'rvm use
 ```
 注意：Dockerfileは編集する必要あり。
 
+### おまけもDocker Hubと連携する
+![](https://farm3.staticflickr.com/2917/14499868131_b5a2fe872a.jpg)  
+GitHubにおまけを追加プッシュした後に上記の追加をする。
+
 # 参照
 + [Dockerizing a Node.js web application](http://docs.docker.com/examples/nodejs_web_app/#test)
 + [boot2docker Vagrant Box](https://github.com/mitchellh/boot2docker-vagrant-box)

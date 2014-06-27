@@ -119,19 +119,30 @@ $ docker push k2works/sample_sinatra
 ```
 ### Docker Hubと連携
 ![](https://farm6.staticflickr.com/5273/14501239854_29422ce38c.jpg)  
+
 Automated Buildを選択
+
 ![](https://farm4.staticflickr.com/3840/14315962849_eedbc730df.jpg)  
+
 GitHubを選択
-![](https://farm4.staticflickr.com/3918/14316118637_302dac4341.jpg)
+
+![](https://farm4.staticflickr.com/3918/14316118637_302dac4341.jpg)  
 ![](https://farm6.staticflickr.com/5503/14315964898_88f9425f6c.jpg)  
+
 Dockerfileが存在するレポジトリを選択
+
 ![](https://farm3.staticflickr.com/2923/14502571245_f4672b732d.jpg)  
+
 Dockerfile Locationにはレポジトリ内のDocerfileの場所を指定（ここではsample_sinatra)
 公開タイプを選択したらCreate Repositoryする。
-![](https://farm4.staticflickr.com/3907/14501239744_e680fec5f4.jpg)
+
+![](https://farm4.staticflickr.com/3907/14501239744_e680fec5f4.jpg)  
 ![](https://farm4.staticflickr.com/3891/14315917890_757f58e889.jpg)  
+
 上記ではDockerfileのロケーションを間違えていたためビルドに失敗している。　　
+
 ![](https://farm4.staticflickr.com/3874/14501594752_1cda267c6b.jpg)
+
 Docerfile Locationを_/sample_sinatra_に修正後Start a Buildを実行してビルドを正常終了させる。
 
 ## <a name="9">おまけ</a>
